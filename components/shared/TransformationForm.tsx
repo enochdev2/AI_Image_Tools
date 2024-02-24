@@ -182,6 +182,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
       setNewTransformation(transformationType.config)
     }
   }, [image, transformationType.config, type])
+  
 
   return (
     <Form {...form}>
