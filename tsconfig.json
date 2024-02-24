@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/webhooks/clerk/route.tsss"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/webhooks/clerk/route.tsss", "components/shared/Checkout.tssx"],
   "exclude": ["node_modules"]
 }
