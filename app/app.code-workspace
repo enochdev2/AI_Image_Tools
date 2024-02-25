@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../components"
+		},
+		{
+			"path": "../constants"
+		},
+		{
+			"path": "../lib"
+		},
+		{
+			"path": "../types"
+		},
+		{
+			"path": "../public"
+		}
+	],
+	"settings": {}
+}
