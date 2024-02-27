@@ -7,6 +7,7 @@ import Image from 'next/image'
 import React from 'react'
 
 const TransformedImage = ({ image, type, title, transformationConfig, isTransforming, setIsTransforming, hasDownload = false }: TransformedImageProps) => {
+  
   const downloadHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
@@ -18,6 +19,7 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
     }), title)
   }
 
+  
   return (
     <div className="flex flex-col gap-4">
       <div className="flex-between">
@@ -27,6 +29,8 @@ const TransformedImage = ({ image, type, title, transformationConfig, isTransfor
 
         {hasDownload && (
           <button 
+            title='button'
+            type='button'
             className="download-btn" 
             onClick={downloadHandler}
           >
