@@ -1,14 +1,17 @@
 "use client"
 
 import { navLinks } from '@/constants'
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { SignOutButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+
 import { Button } from '../ui/button'
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const router= useRouter();
 
   return (
     <aside className="sidebar">
@@ -20,9 +23,7 @@ const Sidebar = () => {
             width={50}
             height={50}
           />
-          <p className="font-bold text-2xl text-purple-500">
-            TRANSFORMATION
-          </p>
+          <p className="font-bold text-2xl text-purple-500">TRANSFORMATION</p>
         </Link>
 
         <nav className="sidebar-nav">
@@ -82,12 +83,26 @@ const Sidebar = () => {
                 );
               })}
 
-              <li className="flex-center cursor-pointer gap-2 p-4">
+              <li className="flex-center cursor-pointer gap-2 p-2">
                 <UserButton afterSignOutUrl="/" showName />
               </li>
             </ul>
           </SignedIn>
 
+          <SignedIn>
+            <SignOutButton signOutCallback={() => router.push("/sign-in")}>
+              <div className=" button flex cursor-pointer gap-4 p-4 bg-purple-gradient bg-cover">
+                <Image
+                  src="/assets/logout.svg"
+                  alt="logout"
+                  width={24}
+                  height={24}
+                />
+
+                <p className="text-white max-lg:hidden">Logout</p>
+              </div>
+            </SignOutButton>
+          </SignedIn>
           <SignedOut>
             <Button asChild className="button bg-purple-gradient bg-cover">
               <Link href="/sign-in">Login</Link>
