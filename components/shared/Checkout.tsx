@@ -48,14 +48,14 @@ const Checkout = ({
   }, []);
 
   const onCheckout = async () => {
-    const transaction = {
-      plan,
-      amount,
-      credits,
-      buyerId,
-    };
+    // const transaction = {
+    //   plan,
+    //   amount,
+    //   credits,
+    //   buyerId,
+    // };
 
-    await checkoutCredits(transaction);
+    // await checkoutCredits(transaction);
   };
 
   return (
